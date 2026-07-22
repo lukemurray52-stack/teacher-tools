@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A free classroom countdown timer and stopwatch.">
+  <title>Classroom Timer | Teacher Tools</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>Teacher Tools</span></a>
+      <nav class="main-nav"><a href="index.html#tools">All tools</a><a href="index.html#about">About</a><a href="index.html#help">Help</a></nav>
+      <div class="header-end"><span class="header-badge">No sign-up required</span></div>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+      <div class="tool-header">
+        <div class="tool-heading">
+          <a class="back-link" href="index.html">← Back to Teacher Tools</a>
+          <h1>Classroom Timer</h1>
+          <p>Choose a countdown, stopwatch or simple traffic-light mode, then switch to full screen.</p>
+        </div>
+        <button class="button secondary small" id="timer-fullscreen" type="button">Full screen</button>
+      </div>
+
+      <section class="page-card timer-panel" id="timer-panel">
+        <div class="timer-modes">
+          <button class="segment-button active" data-mode="countdown" type="button">Countdown</button>
+          <button class="segment-button" data-mode="stopwatch" type="button">Stopwatch</button>
+          <button class="segment-button" data-mode="traffic" type="button">Traffic light</button>
+        </div>
+
+        <div class="timer-inputs" id="countdown-inputs">
+          <input id="minutes-input" type="number" min="0" max="180" value="5" aria-label="Minutes">
+          <input id="seconds-input" type="number" min="0" max="59" value="0" aria-label="Seconds">
+        </div>
+
+        <div class="quick-times" id="quick-times">
+          <button class="segment-button" data-seconds="60" type="button">1 minute</button>
+          <button class="segment-button" data-seconds="300" type="button">5 minutes</button>
+          <button class="segment-button" data-seconds="600" type="button">10 minutes</button>
+          <button class="segment-button" data-seconds="1200" type="button">20 minutes</button>
+        </div>
+
+        <div class="timer-display" id="timer-display">05:00</div>
+
+        <div class="timer-actions">
+          <button class="button primary" id="timer-start" type="button">Start</button>
+          <button class="button secondary" id="timer-reset" type="button">Reset</button>
+        </div>
+
+        <div id="traffic-controls" class="traffic-lights hidden" style="max-width:620px;margin:28px auto 0">
+          <button class="traffic-btn traffic-red" data-light="red" type="button" aria-label="Red light"></button>
+          <button class="traffic-btn traffic-amber" data-light="amber" type="button" aria-label="Amber light"></button>
+          <button class="traffic-btn traffic-green active" data-light="green" type="button" aria-label="Green light"></button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-row"><span>© <span id="year"></span> Teacher Tools</span><span>Works directly in your browser</span></div></footer>
+  <script src="classroom-timer.js"></script>
+</body>
+</html>

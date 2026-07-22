@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create random student groups or pairs.">
+  <title>Random Group Maker | Teacher Tools</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>Teacher Tools</span></a>
+      <nav class="main-nav"><a href="index.html#tools">All tools</a><a href="index.html#about">About</a><a href="index.html#help">Help</a></nav>
+      <div class="header-end"><span class="header-badge">Saved on this device</span></div>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+      <div class="tool-header">
+        <div class="tool-heading">
+          <a class="back-link" href="index.html">← Back to Teacher Tools</a>
+          <h1>Random Group Maker</h1>
+          <p>Use the same locally saved class lists as the Student Selector, or paste a new list for a one-off grouping.</p>
+        </div>
+        <span class="status-pill">Works locally</span>
+      </div>
+
+      <div class="group-layout">
+        <section class="page-card form-card">
+          <label for="group-class">Saved class</label>
+          <select id="group-class"><option value="">Choose a saved class</option></select>
+
+          <label for="group-student-list" style="margin-top:18px">Student names</label>
+          <textarea id="group-student-list" placeholder="One name per line, or separate names with commas"></textarea>
+
+          <div class="form-row" style="margin-top:18px">
+            <div>
+              <label for="group-mode">Create groups by</label>
+              <select id="group-mode"><option value="size">Students per group</option><option value="count">Number of groups</option></select>
+            </div>
+            <div>
+              <label for="group-number">Number</label>
+              <input id="group-number" type="number" min="2" value="4">
+            </div>
+          </div>
+
+          <button class="button primary" id="make-groups" type="button" style="width:100%;margin-top:22px">Make groups</button>
+          <button class="button secondary" id="shuffle-groups" type="button" style="width:100%;margin-top:12px">Shuffle again</button>
+          <p class="helper-text" id="group-status">Groups are created in your browser and are not uploaded.</p>
+        </section>
+
+        <section class="page-card groups-results">
+          <div class="section-title"><span class="section-title-mark" aria-hidden="true">↻</span><h2>Your groups</h2></div>
+          <div class="group-cards" id="group-cards"><p class="helper-text">Add students and choose “Make groups”.</p></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-row"><span>© <span id="year"></span> Teacher Tools</span><span>Class lists stay in this browser</span></div></footer>
+  <script src="group-maker.js"></script>
+</body>
+</html>

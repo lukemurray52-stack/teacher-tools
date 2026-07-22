@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An automatic school display board with time, date, weather, word of the day and fact of the day.">
+  <title>Automatic Display Board | Teacher Tools</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="display-board-page">
+  <main class="display-board" id="display-board">
+    <div class="board-orbit" aria-hidden="true"></div>
+
+    <header class="board-header">
+      <div class="board-date-block">
+        <p id="board-day">TUESDAY</p>
+        <h1 id="board-date">21 July 2026</h1>
+      </div>
+      <div class="board-clock" aria-label="Current time">
+        <span id="board-time">11:48</span>
+        <small id="board-period">PM</small>
+      </div>
+    </header>
+
+    <section class="board-welcome">
+      <p class="greeting" id="board-greeting">Good morning</p>
+      <h2 id="board-heading">Welcome</h2>
+      <p class="message" id="board-message">Have a wonderful day of learning.</p>
+    </section>
+
+    <section class="board-grid">
+      <article class="board-card weather-card" id="weather-widget">
+        <div class="weather-label-row">
+          <p class="board-card-label">Today's weather</p>
+          <p class="weather-location" id="weather-location">Concord, New South Wales</p>
+        </div>
+
+        <div class="weather-main">
+          <div class="weather-symbol" id="weather-symbol" aria-hidden="true">🌤️</div>
+          <div>
+            <div class="weather-temp"><span id="weather-temperature">--</span><sup>°C</sup></div>
+            <p class="weather-condition" id="weather-condition">Loading weather…</p>
+          </div>
+        </div>
+
+        <div class="weather-details">
+          <div class="weather-detail"><span>Feels like</span><strong id="weather-feels-like">--°</strong></div>
+          <div class="weather-detail"><span>High / Low</span><strong id="weather-range">--° / --°</strong></div>
+          <div class="weather-detail"><span>Chance of rain</span><strong id="weather-rain">--%</strong></div>
+        </div>
+        <p class="weather-updated" id="weather-updated">Weather updates automatically.</p>
+      </article>
+
+      <div class="board-right">
+        <article class="board-card word-card" id="word-widget">
+          <div class="word-title-row">
+            <p class="board-card-label">Word of the day</p>
+            <span class="word-type" id="daily-word-type">verb</span>
+          </div>
+          <h3 id="daily-word">Adapt</h3>
+          <button class="definition-toggle" id="definition-toggle" type="button" aria-expanded="false" aria-controls="definition-panel">▣ Show definition</button>
+          <div class="definition-panel" id="definition-panel" hidden>
+            <p class="definition" id="daily-definition">To change in order to suit new conditions.</p>
+            <p class="example"><strong>Example:</strong> <span id="daily-example">Animals adapt to survive in their environments.</span></p>
+          </div>
+        </article>
+
+        <article class="board-card fact-card" id="fact-widget">
+          <p class="board-card-label green">Fact of the day</p>
+          <p class="fact-text" id="daily-fact">Some bamboo species can grow more than 90 centimetres in one day.</p>
+          <div class="fact-illustration" id="fact-illustration" aria-hidden="true">🎋</div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="board-footer">
+      <span>Teacher Tools Display Board</span>
+      <span id="weather-source">Weather data: Open-Meteo</span>
+    </footer>
+
+    <div class="board-controls" aria-label="Display board controls">
+      <a class="board-control" href="index.html" title="Home" aria-label="Return home">⌂</a>
+      <button class="board-control" id="fullscreen-button" type="button" title="Full screen" aria-label="Enter full screen">⛶</button>
+      <button class="board-control" id="settings-button" type="button" title="Settings" aria-label="Open settings">⚙</button>
+    </div>
+
+    <aside class="board-settings" id="board-settings" aria-hidden="true">
+      <div class="settings-top">
+        <div><p class="board-card-label">Display settings</p><h2>Customise your board</h2></div>
+        <button class="settings-close" id="close-settings" type="button" aria-label="Close settings">×</button>
+      </div>
+
+      <form id="settings-form">
+        <label for="location-input">Weather location</label>
+        <input id="location-input" type="text" value="Concord NSW" placeholder="e.g. Concord NSW">
+
+        <label for="heading-input" style="margin-top:16px">Main heading</label>
+        <input id="heading-input" type="text" value="Welcome" maxlength="70">
+
+        <label for="message-input" style="margin-top:16px">Message</label>
+        <input id="message-input" type="text" value="Have a wonderful day of learning." maxlength="110">
+
+        <div class="widget-checks">
+          <label class="widget-check"><input id="show-word" type="checkbox" checked> Show Word of the Day</label>
+          <label class="widget-check"><input id="show-fact" type="checkbox" checked> Show Fact of the Day</label>
+        </div>
+
+        <button class="button primary" type="submit" style="width:100%">Save and update</button>
+        <p class="helper-text" id="settings-status" aria-live="polite">Settings are saved only in this browser.</p>
+      </form>
+    </aside>
+  </main>
+
+  <script src="display-board.js"></script>
+</body>
+</html>

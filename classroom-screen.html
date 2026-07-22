@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A full-screen classroom display for instructions, timer, schedule and traffic lights.">
+  <title>Classroom Screen | Teacher Tools</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="classroom-screen-page">
+  <main class="classroom-screen" id="classroom-screen">
+    <header class="classroom-screen-top">
+      <div>
+        <a class="back-link" href="index.html">← Teacher Tools</a>
+        <h1 class="classroom-screen-title" id="screen-title" contenteditable="true" spellcheck="true">Today's learning</h1>
+      </div>
+      <div class="form-actions">
+        <button class="button secondary small" id="screen-save" type="button">Save</button>
+        <button class="button secondary small" id="screen-fullscreen" type="button">Full screen</button>
+      </div>
+    </header>
+
+    <section class="classroom-screen-grid">
+      <article class="lesson-panel">
+        <label for="lesson-instructions">Instructions</label>
+        <textarea id="lesson-instructions" placeholder="Type the instructions you want students to see...">1. Collect your materials.
+2. Read the task carefully.
+3. Begin independently.</textarea>
+      </article>
+
+      <aside class="screen-side-panel">
+        <div>
+          <label>Timer</label>
+          <div class="screen-timer" id="screen-timer">10:00</div>
+          <div class="form-actions">
+            <button class="button primary small" id="screen-timer-start" type="button">Start</button>
+            <button class="button secondary small" id="screen-timer-reset" type="button">Reset</button>
+          </div>
+        </div>
+
+        <div>
+          <label>Traffic light</label>
+          <div class="traffic-lights">
+            <button class="traffic-btn traffic-red" data-screen-light="red" type="button" aria-label="Red"></button>
+            <button class="traffic-btn traffic-amber" data-screen-light="amber" type="button" aria-label="Amber"></button>
+            <button class="traffic-btn traffic-green active" data-screen-light="green" type="button" aria-label="Green"></button>
+          </div>
+        </div>
+
+        <div>
+          <label for="visual-schedule">Visual schedule</label>
+          <div class="schedule-list" id="visual-schedule">
+            <div class="schedule-item" contenteditable="true">1. Mini lesson</div>
+            <div class="schedule-item" contenteditable="true">2. Independent work</div>
+            <div class="schedule-item" contenteditable="true">3. Share and reflect</div>
+          </div>
+          <button class="button secondary small" id="add-schedule-item" type="button" style="margin-top:12px">Add item</button>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="board-footer">
+      <span>Click the title, instructions or schedule items to edit them.</span>
+      <span id="screen-status">Changes stay on this device.</span>
+    </footer>
+  </main>
+  <script src="classroom-screen.js"></script>
+</body>
+</html>
